@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=backspace"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Minimalist Calc</title>
+    </head>
+    <body>
+
+        <div class="main">
+
+            <div class="input-values">
+                <input id="Values" class="values">
+            </div>
+
+            <div class="top-row">
+                <button id="button-mod" class="operator">%</button>
+                <button id="button-CE" class="button-CE">CE</button>
+                <span id="button-del" class="material-symbols-outlined">backspace</span>
+            </div>
+    
+            <div class="row2">
+                <button id="button-left-parentheses" class="operator">(</button>
+                <button id="button-right-parentheses" class="operator">)</button>
+                <button id="button-square-num" class="operator">x<sup id="square">2</sup></button>
+                <button id="button-divide" class="operator">÷</button>
+                <style>
+                    #square{
+                        font-size: 9px;
+                    }
+                </style>
+            </div>
+    
+            <div class="row3">
+                <button id="button-7" class="num">7</button>
+                <button id="button-8" class="num">8</button>
+                <button id="button-9" class="num">9</button>
+                <button id="button-multiply" class="operator">x</button>
+            </div>
+    
+            <div class="row4">
+                <button id="button-4" class="num">4</button>
+                <button id="button-5" class="num">5</button>
+                <button id="button-6" class="num">6</button>
+                <button id="button-minus" class="operator">-</button>
+            </div>
+    
+            <div class="row5">
+                <button id="button-1" class="num">1</button>
+                <button id="button-2" class="num">2</button>
+                <button id="button-3" class="num">3</button>
+                <button id="button-plus" class="operator">+</button>
+            </div>
+    
+            <div class="bottom-row">
+                <button id="button-0" class="button-0">0</button>
+                <button id="button-separator" class="num">.</button>
+                <button id="button-equal" class="button-equal">=</button>
+            </div>
+
+        </div>
+
+
+        <style>
+            body{
+                position: absolute;
+                inset: 300px;
+                box-sizing: border-box;
+                background-color: goldenrod;
+            }
+
+            .main{
+                position: relative;
+                width: 300px;
+                height: 500px;
+                padding: 20px;
+                border-radius: 20px;
+                display: grid;
+                margin: auto;
+                grid-template-rows: auto repeat(5, auto);
+                gap: 10px;
+                background-color: rgba(255, 255, 255, 0.7);
+                box-shadow: 6px 6px 15px 2px rgba(0, 0, 0, 0.5);
+            }
+            
+            .row2, .row3, .row4, .row5, .bottom-row, .top-row{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                margin-left: 0;
+                gap: inherit;
+            }
+
+            button{
+                height: 50px;
+                font-size: 25px;
+                font-family: 'poppins';
+                padding: 5px;
+                border-radius: 12px;
+                box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.55);
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .num{
+                transition: 800ms ease;
+            }
+            .num:hover {
+                background-color: rgb(209, 207, 207);
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+            .button-equal{
+                transition: 800ms ease;
+            }
+            .button-equal:hover{
+                background-color: rgb(202, 82, 2);
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+            .button-CE{
+                transition: 800ms ease;
+            }
+            .button-CE:hover{
+                background-color: rgb(255, 67, 67);
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+
+            .button-0{
+                grid-column: span 2;
+                width: 100%;
+                transition: 800ms ease;
+            }
+            .button-0:hover{
+                background-color: rgb(209, 207, 207);
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+
+            .input-values{
+                width: 300px;
+                height: 90px;
+            }
+
+            .values{
+                box-sizing: border-box;
+                width: 300px;
+                height: 90px;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 30px;
+                border-radius: 10px;
+                border: 2px solid;
+                box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.55);
+                outline: none;
+            }
+
+            .top-row{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                align-content: space-between;
+            }
+
+            #button-del{
+                width: 145px;
+                height: 50px;
+                grid-column: span 2;
+                align-self: center;
+                justify-self: end;
+                border: 2px solid;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                cursor: pointer;
+                font-size: 30px;
+                background-color: rgba(0, 130, 255, 0.5);
+                box-sizing: border-box;
+                box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.55);
+                user-select: none;
+                transition: 800ms ease;
+            }
+            #button-del:hover{
+                background-color: rgb(55, 122, 247);
+                transform: scaleX(1.05) scaleY(1.1);
+            }
+
+            .button-CE{
+                background-color: rgba(255, 0, 0, 0.5);
+            }
+
+            .operator {
+                background-color: rgba(196, 196, 196, 0.85);
+                transition: 800ms ease;
+            }
+            .operator:hover{
+                background-color: rgb(161, 160, 160);
+                transform: scaleX(1.1) scaleY(1.1);
+            }
+
+            .button-equal{
+                background-color: rgba(248, 150, 1);
+            }
+
+        </style>
+
+        <script src="Calc.js"></script>
+    </body>
+</html>
